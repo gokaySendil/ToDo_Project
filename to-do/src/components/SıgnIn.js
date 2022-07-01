@@ -5,7 +5,7 @@ import "../styles/_SignIn.scss";
 const SignIn = (props) => {
   const history = useNavigate();
   const handleCreateAccountButtonClick = () => {
-    history("/signup");
+    history("signup");
   };
   return (
     <div className="container">

@@ -1,35 +1,25 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-//import SignIn from "./components/SıgnIn";
+import SignIn from "./components/SıgnIn";
 import SignUp from "./components/SignUp";
-import CardList from "./components/CardList";
-import ToDoForm from "./components/ToDoForm";
-import MainPage from "./components/MainPage";
 
 function App() {
   return (
-    <Router>
+    <div>
       <Routes>
-        <Route
-          exact
-          path="/"
-          element={
-            <div>
-              <MainPage />
-            </div>
-          }
-        />
-        <Route
-          exact
-          path="/signup"
-          element={
-            <div>
-              <SignUp />
-            </div>
-          }
-        />
+        <Route path="/" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
       </Routes>
-    </Router>
+    </div>
   );
 }
 
 export default App;
+/* 
+<Route
+            path="/home"
+            element={
+              <ProtectedRoute>
+                <MainPage />
+              </ProtectedRoute>
+            }
+          />*/
