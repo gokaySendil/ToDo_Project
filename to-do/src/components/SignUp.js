@@ -25,6 +25,8 @@ const SignUp = () => {
   };
   // Sumbit
   const handleSumbit = async (event) => {
+    setFoundError(false);
+    setError("");
     event.preventDefault();
     try {
       if (password === confrimPassword) {
@@ -38,6 +40,8 @@ const SignUp = () => {
       }
     } catch (e) {
       console.log(e);
+      setFoundError(true);
+      setError(e);
     }
   };
 
