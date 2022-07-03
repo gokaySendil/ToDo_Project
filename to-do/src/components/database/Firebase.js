@@ -5,6 +5,7 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut,
 } from "firebase/auth";
 
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -22,7 +23,7 @@ const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const auth = getAuth(app);
 export default app;
-export const authSignUp = (email, password) => {
+export const authSignUp = async (email, password) => {
   return createUserWithEmailAndPassword(auth, email, password).then(
     setDoc(doc(db, "users", email), {
       email: email,
@@ -31,6 +32,9 @@ export const authSignUp = (email, password) => {
     })
   );
 };
-export const authLogin = (email, password) => {
+export const authLogin = async (email, password) => {
   return signInWithEmailAndPassword(auth, email, password);
+};
+export const authSignOut = async () => {
+  return signOut();
 };

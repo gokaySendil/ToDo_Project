@@ -21,7 +21,7 @@ body {
   margin-top: 10px;
   border-radius: 10px;
   -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
   padding: 50px 35px;
 }
 .signin form .button-holder {
@@ -152,7 +152,7 @@ body {
   padding-top: 15px;
   padding-bottom: 15px;
   -o-object-fit: scale-down;
-  object-fit: scale-down;
+     object-fit: scale-down;
   display: flex;
 }
 
@@ -203,4 +203,9 @@ body {
 .form_container h3 {
   font-size: 30px;
   color: #e5e5e5;
-} /*# sourceMappingURL=main.css.map */
+}
+
+text {
+  color: white;
+  font-size: 15px;
+}/*# sourceMappingURL=main.css.map */
