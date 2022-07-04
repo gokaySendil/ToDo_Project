@@ -1,10 +1,8 @@
 import "../styles/_Card.scss";
-const Card = () => {
+const Card = (props) => {
   return (
-    <div class="card">
-      <h2 class="card__title">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      </h2>
+    <div className="card">
+      <h2 className="card__title">{props.title}</h2>
       <button>Delete</button>
     </div>
   );
