@@ -13,6 +13,15 @@ This is my first react js project.It's a basic todo app with firebase database i
   npm start
 ```
 
+## What I Learnt
+- React js basic functional component usage
+- React hooks data manuplating with useEffect&useState 
+- Javascript array functions and exports
+- React-router for navigate user between pages and how to create a private route.
+- NoSql Firebase firestore database CRUD operations and snapshot data fecthing.
+
+
+
 ## Screenshots
 
 
