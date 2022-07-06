@@ -4,6 +4,7 @@ import {
   getFirestore,
   setDoc,
   doc,
+  updateDoc,
   onSnapshot,
   arrayUnion,
   arrayRemove,
@@ -45,4 +46,14 @@ export const authLogin = async (email, password) => {
 };
 export const authSignOut = async () => {
   return signOut();
+};
+export const deleteItem = (title) => {
+  updateDoc(doc(db, "users", auth.currentUser.email), {
+    todos: arrayRemove({ title: title }),
+  });
+};
+export const addnewTodo = (title) => {
+  updateDoc(doc(db, "users", auth.currentUser.email), {
+    todos: arrayUnion({ title: title }),
+  });
 };

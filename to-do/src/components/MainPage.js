@@ -25,20 +25,24 @@ const MainPage = () => {
           result.push(element["title"]);
         });
       });
+      setArray([]);
       setArray(result);
       setLoding(false);
     });
   };
 
   useEffect(() => {
+    console.log("UseEffect");
     sub(auth.currentUser.email);
   }, []);
 
-  const onAddToDo = (obj) => {
-    setArray([...array, obj["title"]]);
-    updateDoc(doc(db, "users", auth.currentUser.email), {
-      todos: arrayUnion(obj),
-    });
+  const onAddToDo = (todoTitle) => {
+    console.log(todoTitle + " Added");
+    sub(auth.currentUser.email);
+  };
+  const onRemove = (title) => {
+    console.log(title + " Deleted");
+    sub(auth.currentUser.email);
   };
   return (
     <div>
@@ -50,7 +54,7 @@ const MainPage = () => {
             <ToDoForm passData={onAddToDo} />
           </section>
           <section>
-            <CardList array={array} />
+            <CardList removeCards={onRemove} array={array} />
           </section>
         </div>
       )}

@@ -17,7 +17,15 @@ const CardList = (props) => {
   return (
     <div className="grid_container">
       {array.map((element, index) => {
-        return <Card key={index} title={element} />;
+        return (
+          <Card
+            removeSelf={() => {
+              props.removeCards(element);
+            }}
+            key={index}
+            title={element}
+          />
+        );
       })}
     </div>
   );

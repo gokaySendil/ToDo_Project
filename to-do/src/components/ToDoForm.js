@@ -1,5 +1,8 @@
 import "../styles/_ToDoForm.scss";
 import { useState } from "react";
+import { auth, db } from "./database/Firebase";
+import { addnewTodo } from "./database/Firebase";
+
 const ToDoForm = (props) => {
   const [todoTitle, setTitle] = useState("");
   const titleChangeHandler = (event) => {
@@ -7,10 +10,8 @@ const ToDoForm = (props) => {
   };
   const newTodoAdder = (event) => {
     event.preventDefault();
-    const obj = {
-      title: todoTitle,
-    };
-    props.passData(obj);
+    addnewTodo(todoTitle);
+    props.passData(todoTitle);
   };
 
   return (
