@@ -19,8 +19,8 @@ This is my first react js project.It's a basic todo app with firebase database i
   npm start
 ```
 ## Used Packages
-![React-Toastify](https://www.npmjs.com/package/react-toastify)
-![Firebasev9](https://firebase.google.com/docs/web/setup)
+- [React-Toastify](https://www.npmjs.com/package/react-toastify)
+- [Firebasev9](https://firebase.google.com/docs/web/setup)
 
 
 
