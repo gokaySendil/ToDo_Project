@@ -1,6 +1,12 @@
 # Todo Project
 
 This is my first react js project.It's a basic todo app with firebase database integrated.
+## What I Learnt
+- React js basic functional component usage
+- React hooks data manuplating with useEffect&useState 
+- Javascript array functions and exports
+- React-router for navigate user between pages and how to create a private route.
+- NoSql Firebase firestore database CRUD operations and snapshot data fecthing.
 
 ## Installation
 
@@ -12,13 +18,9 @@ This is my first react js project.It's a basic todo app with firebase database i
   cd ./to-do/
   npm start
 ```
-
-## What I Learnt
-- React js basic functional component usage
-- React hooks data manuplating with useEffect&useState 
-- Javascript array functions and exports
-- React-router for navigate user between pages and how to create a private route.
-- NoSql Firebase firestore database CRUD operations and snapshot data fecthing.
+## Used Packages
+![React-Toastify](https://www.npmjs.com/package/react-toastify)
+![Firebasev9](https://firebase.google.com/docs/web/setup)
 
 
 
