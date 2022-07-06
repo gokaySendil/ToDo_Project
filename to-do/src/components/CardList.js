@@ -9,7 +9,7 @@ const CardList = (props) => {
   if (array.length === 0) {
     return (
       <div className="grid_container">
-        <h2>Found no todos</h2>
+        <h1>Found no todos</h1>
       </div>
     );
   }

@@ -3,7 +3,7 @@ import ToDoForm from "./ToDoForm";
 import CardList from "./CardList";
 import Card from "../UI/Card";
 import NavBar from "./NavBar";
-import { auth, db } from "./database/Firebase";
+import { auth, db, getError } from "./database/Firebase";
 import { useState, useEffect } from "react";
 import {
   doc,
@@ -12,8 +12,11 @@ import {
   arrayUnion,
   arrayRemove,
 } from "firebase/firestore";
-
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const MainPage = () => {
+  const history = useNavigate();
   const [isLoading, setLoding] = useState(true);
   const [array, setArray] = useState([]);
   const sub = async (email) => {
@@ -32,21 +35,52 @@ const MainPage = () => {
   };
 
   useEffect(() => {
-    console.log("UseEffect");
-    sub(auth.currentUser.email);
+    if (auth.currentUser === null) {
+      history("/signup");
+    } else {
+      sub(auth.currentUser.email);
+    }
   }, []);
 
   const onAddToDo = (todoTitle) => {
-    console.log(todoTitle + " Added");
+    toast.success(todoTitle + " Added", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
     sub(auth.currentUser.email);
   };
   const onRemove = (title) => {
-    console.log(title + " Deleted");
+    toast.success(title + " Deleted", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
     sub(auth.currentUser.email);
   };
+
   return (
     <div>
-      {isLoading && <h1>Loading</h1>}
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+      {isLoading && toast.loading("Please wait...")}
       {!isLoading && (
         <div>
           <section>

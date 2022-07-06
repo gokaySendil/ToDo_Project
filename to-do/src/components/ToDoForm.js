@@ -1,6 +1,5 @@
 import "../styles/_ToDoForm.scss";
 import { useState } from "react";
-import { auth, db } from "./database/Firebase";
 import { addnewTodo } from "./database/Firebase";
 
 const ToDoForm = (props) => {
@@ -13,7 +12,6 @@ const ToDoForm = (props) => {
     addnewTodo(todoTitle);
     props.passData(todoTitle);
   };
-
   return (
     <div className="form_holder">
       <div className="form_container">

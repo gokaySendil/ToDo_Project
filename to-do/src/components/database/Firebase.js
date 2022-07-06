@@ -57,3 +57,17 @@ export const addnewTodo = (title) => {
     todos: arrayUnion({ title: title }),
   });
 };
+export const getError = (error_code) => {
+  switch (error_code) {
+    case "auth/invalid-password":
+      return "Password provided is not corrected";
+    case "auth/invalid-email":
+      return "Email provided is invalid";
+    case "auth/user-not-found":
+      return "There is no existing user";
+    case "auth/email-already-exists":
+      return "Email is alreay been used";
+    default:
+      return error_code;
+  }
+};

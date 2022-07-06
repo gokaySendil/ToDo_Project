@@ -6,13 +6,16 @@ import "../styles/_Navbar.scss";
 const NavBar = () => {
   const history = useNavigate();
   const handleLogout = () => {
+    sessionStorage.removeItem("Auth Token");
     authSignOut().then(history(-1));
   };
 
   return (
     <div>
       <ul>
-        <button onClick={handleLogout}>Log out</button>
+        <button className="logout-button" onClick={handleLogout}>
+          Log out
+        </button>
       </ul>
     </div>
   );
