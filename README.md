@@ -21,6 +21,7 @@ This is my first react js project.It's a basic todo app with firebase database i
 ## Used Packages
 - [React-Toastify](https://www.npmjs.com/package/react-toastify)
 - [Firebasev9](https://firebase.google.com/docs/web/setup)
+- [Sass&Scss](https://sass-lang.com/guide)
 
 
 
