@@ -36,6 +36,16 @@ const MainPage = () => {
 
   useEffect(() => {
     if (auth.currentUser === null) {
+      setLoding(true);
+      toast.error("Please Login&Register first", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
       history("/signup");
     } else {
       sub(auth.currentUser.email);
@@ -71,7 +81,7 @@ const MainPage = () => {
     <div>
       <ToastContainer
         position="top-center"
-        autoClose={5000}
+        autoClose={1000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
@@ -80,7 +90,11 @@ const MainPage = () => {
         draggable
         pauseOnHover
       />
-      {isLoading && toast.loading("Please wait...")}
+      {isLoading && (
+        <div>
+          <h1>Loading</h1>
+        </div>
+      )}
       {!isLoading && (
         <div>
           <section>
